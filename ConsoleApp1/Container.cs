@@ -82,7 +82,7 @@
 
         public override void Notify(string message)
         {
-            Console.WriteLine($"{message} (Контейнер {SerialNumber})");
+            Console.WriteLine($"{message} (Container {SerialNumber})");
         }
     }
 
@@ -132,7 +132,7 @@
             }
             if (Temperature < product.Temperature)
             {
-                Notify("Product temperature is lower than container temperture");
+                Notify("Product temperature is lower than container temperature");
                 throw new Exception("TemperatureException");
             }
             base.LoadContainer(cargoMass);
@@ -184,7 +184,7 @@
         public void AddContainer(Container container)
         {
             if (Containers.Count >= MaxContainers)
-                throw new Exception("Too many contianers.");
+                throw new Exception("Too many containers.");
             double currentMassTons = TotalContainersMass() / 1000.0;
             if (currentMassTons + (container.TareWeight + container.CargoMass) / 1000.0 > MaxContainersMass)
                 throw new Exception("Max weight of containers is exceeded..");
@@ -215,6 +215,7 @@
             Console.WriteLine($"Speed = {MaxSpeed}, containers  = {Containers.Count}/{MaxContainers}, total mass = {TotalContainersMass() / 1000.0} tons");
             foreach (var container in Containers)
             {
+
                 Console.WriteLine($" Container {container.SerialNumber}: cargo = {container.CargoMass} kg, container capacity = {container.MaxPayload} kg");
             }
         }
