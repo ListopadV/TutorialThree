@@ -1,3 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ConsoleApp1;
+using System;
+using System.Collections.Generic;
 
-Console.WriteLine("Hello, World!");
+public class Program
+{
+    
+    static void Main(string[] args)
+    {
+        Product meat = new Product("Beef", 30.1);
+    }
+}
